@@ -4,13 +4,14 @@ import {
   ReactNode,
   useEffect,
   useReducer,
-  useState,
+  // eslint-disable-next-line prettier/prettier
+  useState
 } from 'react'
 import {
-  ActionTypes,
   addNewCycleAction,
   interruptCurrentCycleAction,
-  markCurrentCycleAsFinishedAction,
+  // eslint-disable-next-line prettier/prettier
+  markCurrentCycleAsFinishedAction
 } from '../reducers/cycles/actions'
 import { Cycle, cyclesReducer } from '../reducers/cycles/reducer'
 
@@ -52,6 +53,11 @@ export function CyclesContextProvider({
 
       if (storedStateAsJSON) {
         return JSON.parse(storedStateAsJSON)
+      }
+
+      return {
+        cycles: [],
+        activeCycleId: null,
       }
     },
   )
